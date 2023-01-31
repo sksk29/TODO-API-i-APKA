@@ -1,0 +1,42 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "airbnb-typescript",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json", "./tsconfig.node.json"]
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": true, "optionalDependencies": false, "peerDependencies": false }
+    ],
+    "max-len": ["error", { "code": 110 }],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/jsx-filename-extension": "off",
+    "prettier/prettier": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/lines-between-class-members": "off"
+  }
+}
